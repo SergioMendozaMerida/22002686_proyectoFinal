@@ -1,0 +1,45 @@
+body{
+    background-color: blanchedalmond;
+}
+
+.formulario{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+.input{
+    width: 200px;
+    height: 25px;
+}
+
+.boton-confirmar{
+    background-color: greenyellow;
+    border-radius: 15px;
+}
+
+.btnAct{
+    background-color: yellow;
+    border-radius: 15px;
+}
+
+.btnPed{
+    background-color: greenyellow;
+    border-radius: 15px;
+}
+
+.celda{
+    width: 125px;
+    text-align: center;
+}
+
+#tabla-productos{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#desplegable{
+    width: 200px;
+}
