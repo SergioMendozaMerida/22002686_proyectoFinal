@@ -32,7 +32,7 @@ body{
 }
 
 .celda{
-    width: 125px;
+    width: 160px;
     text-align: center;
 }
 
@@ -42,4 +42,21 @@ body{
 
 #desplegable{
     width: 200px;
+}
+
+#alerta{
+    color: red;
+}
+
+#encabezado{
+    font-family: 'Lucida Sans';
+    font-size: 30px;
+    color: aqua;
+    text-align: center;
+    font-weight: 700;
+
+}
+
+th,td{
+    border: solid 1px black;
 }

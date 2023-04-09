@@ -16,5 +16,6 @@ window.comunication.actualizarCorrecto(function(event, args){
 
 formularioActualizar.addEventListener('submit', function(){
     alert('ha actualizado el producto')
+    window.comunication.actualizar([codigo.value,nombre.value,descripcion.value,categoria.value,existencia.value,codigo.value])
     window.close()
 })

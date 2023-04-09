@@ -5,9 +5,12 @@ var contrasenia = document.getElementById('pass-input')
 formulario.addEventListener('submit', function(evento){
     evento.preventDefault()
     window.comunication.inicioValido([idIngresado.value, contrasenia.value])
-    window.close()
 })
 
 window.comunication.inicioCorrecto(function(event, args){
-    alert(args)
+    if(args == 'cerrar'){
+        window.close()
+    }else{
+        formulario.innerHTML += '<br><br><label id="alerta">Usuario o contraseña no validos</label><br>'
+    }
 })

@@ -5,20 +5,25 @@ var proveedor = document.getElementById('proveedor')
 var cantidad = document.getElementById('cantidad')
 var botonConfirmar = document.getElementById('boton-confirmar')
 var desplegable = document.getElementById('desplegable')
+var proveedorSeleccionado
 
-proveedores = [
-    {nombre: '--Seleccione'},
-    {nombre: 'Los Pinos'},
-    {nombre: 'CONFIT'},
-    {nombre: 'ASORF'},
-]
+/*desplegable.addEventListener('change', function(){
+    proveedorSeleccionado = this.options[proveedor.selectedIndex]
+})*/
+
+proveedores = []
+
+window.comunication.enviarProveedores(function(event,args){
+    console.log(args)
+    proveedores = args
+})
 
 window.comunication.pedirCorrecto(function(event, args){
     codigo.value = args[0]
     nombre.value = args[1]    
 })
 
-menuDesplegable()
+setTimeout(menuDesplegable,1000)
 
 function menuDesplegable() {
 
@@ -28,7 +33,12 @@ function menuDesplegable() {
 
 }
 
-formularioPedir.addEventListener('submit', function(){
+formularioPedir.addEventListener('submit', function(evento){
     alert('El pedidio se ha realizado')
+
+    evento.preventDefault()
+    
+    window.comunication.realizarPedido([codigo.value,nombre.value,cantidad.value,desplegable.options[desplegable.selectedIndex].text])
     window.close()
 })
+
